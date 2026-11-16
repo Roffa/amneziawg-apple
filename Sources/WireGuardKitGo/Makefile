@@ -11,6 +11,10 @@ CONFIGURATION_TEMP_DIR ?= $(CURDIR)/.tmp
 
 export PATH := $(PATH):/usr/local/bin:/opt/homebrew/bin
 export CC ?= clang
+export GOPATH ?= $(CONFIGURATION_TEMP_DIR)/wireguard-go-bridge/gopath
+export GOMODCACHE ?= $(GOPATH)/pkg/mod
+export GOCACHE ?= $(CONFIGURATION_TEMP_DIR)/wireguard-go-bridge/gocache
+export GOTMPDIR ?= $(CONFIGURATION_TEMP_DIR)/wireguard-go-bridge/gotmp
 LIPO ?= lipo
 DESTDIR ?= $(CONFIGURATION_BUILD_DIR)
 BUILDDIR ?= $(CONFIGURATION_TEMP_DIR)/wireguard-go-bridge
@@ -28,9 +32,17 @@ REAL_GOROOT := $(shell go env GOROOT 2>/dev/null)
 export GOROOT := $(BUILDDIR)/goroot
 $(GOROOT)/.prepared:
 	[ -n "$(REAL_GOROOT)" ]
+	mkdir -p "$(GOPATH)" "$(GOMODCACHE)" "$(GOCACHE)" "$(GOTMPDIR)"
 	mkdir -p "$(GOROOT)"
 	rsync -a --delete --exclude=pkg/obj/go-build "$(REAL_GOROOT)/" "$(GOROOT)/"
-	cat goruntime-*.diff | patch -p1 -f -N -r- -d "$(GOROOT)"
+	chmod -R u+w "$(GOROOT)"
+	mkdir -p "$(CURDIR)/.tmp/patchtmp"
+	TMPDIR="$(CURDIR)/.tmp/patchtmp" patch -p1 -f -N -r- -d "$(GOROOT)" < goruntime-boottime-over-monotonic.diff
+	if [ -f "$(GOROOT)/src/net/http/internal/http2/transport.go" ]; then \
+		TMPDIR="$(CURDIR)/.tmp/patchtmp" patch -p1 -f -N -r- -d "$(GOROOT)" < goruntime-http2-request-body-scratch-32k.diff; \
+	else \
+		echo "warning: skip goruntime-http2-request-body-scratch-32k.diff because target file is missing in current Go toolchain"; \
+	fi
 	touch "$@"
 
 define libwg-go-a
@@ -46,7 +58,9 @@ endef
 $(foreach ARCH,$(ARCHS),$(eval $(call libwg-go-a,$(ARCH))))
 
 $(DESTDIR)/wireguard-go-version.h: go.mod $(GOROOT)/.prepared
-	 sed -E -n 's/.*golang\.zx2c4\.com\/wireguard +v[0-9.]+-[0-9]+-([0-9a-f]{8})[0-9a-f]{4}.*/#define WIREGUARD_GO_VERSION "\1"/p' "$<" > "$@"
+	@version=$$(sed -E -n 's/.*(golang\.zx2c4\.com\/wireguard|github\.com\/amnezia-vpn\/amneziawg-go\/v[0-9]+) +v([^[:space:]]+).*/\2/p' "$<" | head -n1); \
+	if [ -z "$$version" ]; then version="unknown"; fi; \
+	printf '#define WIREGUARD_GO_VERSION "%s"\n' "$$version" > "$@"
 
 $(DESTDIR)/libwg-go.a: $(foreach ARCH,$(ARCHS),$(BUILDDIR)/libwg-go-$(ARCH).a)
 	@mkdir -vp "$(DESTDIR)"

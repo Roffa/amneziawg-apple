@@ -20,16 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        self.window = window
-
-        let mainVC = MainViewController()
-        window.rootViewController = mainVC
-        window.makeKeyAndVisible()
-
-        self.mainVC = mainVC
-
         return true
+    }
+
+    func application(_ application: UIApplication,
+                     configurationForConnecting connectingSceneSession: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        configuration.delegateClass = SceneDelegate.self
+        return configuration
+    }
+
+    @discardableResult
+    func ensureMainViewController() -> MainViewController {
+        if let mainVC = self.mainVC {
+            return mainVC
+        }
+        let mainVC = MainViewController()
+        self.mainVC = mainVC
+        return mainVC
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
@@ -47,6 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        handleShortcutItem(shortcutItem, completionHandler: completionHandler)
+    }
+
+    func handleShortcutItem(_ shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         guard shortcutItem.type == QuickActionItem.type else {
             completionHandler(false)
             return
@@ -54,6 +67,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tunnelName = shortcutItem.localizedTitle
         mainVC?.showTunnelDetailForTunnel(named: tunnelName, animated: false, shouldToggleStatus: true)
         completionHandler(true)
+    }
+}
+
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var window: UIWindow?
+
+    private var appDelegate: AppDelegate? {
+        UIApplication.shared.delegate as? AppDelegate
+    }
+
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = scene as? UIWindowScene else { return }
+        guard let appDelegate = appDelegate else { return }
+
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = appDelegate.ensureMainViewController()
+        self.window = window
+        appDelegate.window = window
+        window.makeKeyAndVisible()
+
+        if let url = connectionOptions.urlContexts.first?.url {
+            appDelegate.mainVC?.importFromDisposableFile(url: url)
+        }
+
+        if let shortcutItem = connectionOptions.shortcutItem {
+            appDelegate.handleShortcutItem(shortcutItem) { _ in }
+        }
+    }
+
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else { return }
+        appDelegate?.mainVC?.importFromDisposableFile(url: url)
+    }
+
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        appDelegate?.mainVC?.refreshTunnelConnectionStatuses()
+    }
+
+    func sceneWillResignActive(_ scene: UIScene) {
+        guard let app = appDelegate,
+              let allTunnelNames = app.mainVC?.allTunnelNames() else { return }
+        UIApplication.shared.shortcutItems = QuickActionItem.createItems(allTunnelNames: allTunnelNames)
+    }
+
+    func windowScene(_ windowScene: UIWindowScene,
+                     performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
+        appDelegate?.handleShortcutItem(shortcutItem, completionHandler: completionHandler) ?? completionHandler(false)
     }
 }
 

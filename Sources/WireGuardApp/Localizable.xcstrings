@@ -5,7 +5,7 @@
 
     },
     "actionCancel" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -125,7 +125,7 @@
     },
     "actionOK" : {
       "comment" : "Generic alert action names",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -244,7 +244,7 @@
       }
     },
     "actionSave" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -363,7 +363,7 @@
       }
     },
     "addPeerButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -482,7 +482,7 @@
       }
     },
     "addTunnelMenuFromScratch" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -602,7 +602,7 @@
     },
     "addTunnelMenuHeader" : {
       "comment" : "Tunnels list menu",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -721,7 +721,7 @@
       }
     },
     "addTunnelMenuImportFile" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -840,7 +840,7 @@
       }
     },
     "addTunnelMenuQRCode" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -3478,7 +3478,7 @@
     },
     "alertInvalidInterfaceTitle" : {
       "comment" : "Alert title for error in the interface data",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -4432,7 +4432,7 @@
     },
     "alertInvalidPeerTitle" : {
       "comment" : "Alert title for error in the peer data",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -5027,7 +5027,7 @@
       }
     },
     "alertScanQRCodeCameraUnsupportedMessage" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -5147,7 +5147,7 @@
     },
     "alertScanQRCodeCameraUnsupportedTitle" : {
       "comment" : "Scanning QR code alerts",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -5266,7 +5266,7 @@
       }
     },
     "alertScanQRCodeInvalidQRCodeMessage" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -5385,7 +5385,7 @@
       }
     },
     "alertScanQRCodeInvalidQRCodeTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -5504,7 +5504,7 @@
       }
     },
     "alertScanQRCodeNamePromptTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -5623,7 +5623,7 @@
       }
     },
     "alertScanQRCodeUnreadableQRCodeMessage" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -5742,7 +5742,7 @@
       }
     },
     "alertScanQRCodeUnreadableQRCodeTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -9161,7 +9161,7 @@
       }
     },
     "alertUnableToRemovePreviousLogMessage" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -9281,7 +9281,7 @@
     },
     "alertUnableToRemovePreviousLogTitle" : {
       "comment" : "Log alerts",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -9757,7 +9757,7 @@
       }
     },
     "deletePeerConfirmationAlertButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -9876,7 +9876,7 @@
       }
     },
     "deletePeerConfirmationAlertMessage" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -9995,7 +9995,7 @@
       }
     },
     "deleteTunnelButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -10114,7 +10114,7 @@
       }
     },
     "deleteTunnelConfirmationAlertButtonMessage (%d)" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10221,7 +10221,7 @@
       }
     },
     "deleteTunnelConfirmationAlertButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -10340,7 +10340,7 @@
       }
     },
     "deleteTunnelConfirmationAlertMessage" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -10459,7 +10459,7 @@
       }
     },
     "deleteTunnelsConfirmationAlertButtonMessage (%d)" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10566,7 +10566,7 @@
       }
     },
     "deleteTunnelsConfirmationAlertButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -10805,7 +10805,7 @@
       }
     },
     "editTunnelViewTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -10924,7 +10924,7 @@
       }
     },
     "iosExportPrivateData" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -11043,7 +11043,7 @@
       }
     },
     "iosViewPrivateData" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -11163,7 +11163,7 @@
     },
     "logViewTitle" : {
       "comment" : "Log view",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -22394,7 +22394,7 @@
     },
     "newTunnelViewTitle" : {
       "comment" : "Tunnel detail and edit UI",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -22513,7 +22513,7 @@
       }
     },
     "scanQRCodeTipText" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -22633,7 +22633,7 @@
     },
     "scanQRCodeViewTitle" : {
       "comment" : "Scanning QR code UI",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -22752,7 +22752,7 @@
       }
     },
     "settingsExportZipButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -22871,7 +22871,7 @@
       }
     },
     "settingsSectionTitleAbout" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -22990,7 +22990,7 @@
       }
     },
     "settingsSectionTitleExportConfigurations" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -23109,7 +23109,7 @@
       }
     },
     "settingsSectionTitleTunnelLog" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -23228,7 +23228,7 @@
       }
     },
     "settingsVersionKeyWireGuardForIOS" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -23347,7 +23347,7 @@
       }
     },
     "settingsVersionKeyWireGuardGoBackend" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -23466,7 +23466,7 @@
       }
     },
     "settingsViewLogButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -23586,7 +23586,7 @@
     },
     "settingsViewTitle" : {
       "comment" : "Settings UI",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -23705,7 +23705,7 @@
       }
     },
     "tunnelEditPlaceholderTextAutomatic" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -23824,7 +23824,7 @@
       }
     },
     "tunnelEditPlaceholderTextOff" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -23943,7 +23943,7 @@
       }
     },
     "tunnelEditPlaceholderTextOptional" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -24062,7 +24062,7 @@
       }
     },
     "tunnelEditPlaceholderTextRequired" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -24181,7 +24181,7 @@
       }
     },
     "tunnelEditPlaceholderTextStronglyRecommended" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -26862,7 +26862,7 @@
       }
     },
     "tunnelListCaptionOnDemand" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -26879,7 +26879,7 @@
       }
     },
     "tunnelOnDemandAddMessageAddConnectedSSID (%@)" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -26980,7 +26980,7 @@
       }
     },
     "tunnelOnDemandAddMessageAddNewSSID" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -27896,7 +27896,7 @@
       }
     },
     "tunnelOnDemandNoSSIDs" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -29050,7 +29050,7 @@
       }
     },
     "tunnelOnDemandSectionTitleAddSSIDs" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -29169,7 +29169,7 @@
       }
     },
     "tunnelOnDemandSectionTitleSelectedSSIDs" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -29502,7 +29502,7 @@
       }
     },
     "tunnelOnDemandSSIDViewTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -31144,7 +31144,7 @@
       }
     },
     "tunnelSectionTitleOnDemand" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -31382,7 +31382,7 @@
       }
     },
     "tunnelSectionTitleStatus" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -31501,7 +31501,7 @@
       }
     },
     "tunnelsListCenteredAddTunnelButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -31620,7 +31620,7 @@
       }
     },
     "tunnelsListDeleteButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -31739,7 +31739,7 @@
       }
     },
     "tunnelsListSelectAllButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -31858,7 +31858,7 @@
       }
     },
     "tunnelsListSelectButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -31977,7 +31977,7 @@
       }
     },
     "tunnelsListSelectedTitle (%d)" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -32096,7 +32096,7 @@
       }
     },
     "tunnelsListSettingsButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -32215,7 +32215,7 @@
       }
     },
     "tunnelsListSwipeDeleteButtonTitle" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -32335,7 +32335,7 @@
     },
     "tunnelsListTitle" : {
       "comment" : "Tunnels list UI",
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -32692,7 +32692,7 @@
       }
     },
     "tunnelStatusAddendumOnDemand" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -32981,7 +32981,7 @@
       }
     },
     "tunnelStatusOnDemandDisabled" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
