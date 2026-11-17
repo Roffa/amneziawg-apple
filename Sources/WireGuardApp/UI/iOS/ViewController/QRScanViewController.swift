@@ -101,8 +101,14 @@ class QRScanViewController: UIViewController {
     }
 
     func scanDidComplete(withCode code: String) {
-        let scannedTunnelConfiguration = try? TunnelConfiguration(fromWgQuickConfig: code, called: "Scanned")
-        guard let tunnelConfiguration = scannedTunnelConfiguration else {
+        let tunnelConfiguration: TunnelConfiguration
+        do {
+            let configText = try QRCodeImportPreprocessor.configText(from: code)
+            tunnelConfiguration = try TunnelConfiguration(fromWgQuickConfig: configText, called: "Scanned")
+        } catch let error as QRCodeImportPreparationError {
+            scanDidEncounterError(title: tr("alertScanQRCodeInvalidQRCodeTitle"), message: error.alertMessage)
+            return
+        } catch {
             scanDidEncounterError(title: tr("alertScanQRCodeInvalidQRCodeTitle"), message: tr("alertScanQRCodeInvalidQRCodeMessage"))
             return
         }
