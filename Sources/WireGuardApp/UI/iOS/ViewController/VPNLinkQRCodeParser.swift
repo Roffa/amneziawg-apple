@@ -91,6 +91,8 @@ enum QRCodeImportPreprocessor {
             throw QRCodeImportPreparationError.malformedJSON
         }
 
+        debugLogDecodedOuterJSON(jsonData)
+
         guard let containers = root["containers"] as? [[String: Any]],
               let firstContainer = containers.first,
               let awg = firstContainer["awg"] as? [String: Any],
@@ -117,6 +119,8 @@ enum QRCodeImportPreprocessor {
         if resolvedConfig.contains("$PRIMARY_DNS") || resolvedConfig.contains("$SECONDARY_DNS") {
             throw QRCodeImportPreparationError.unresolvedDNSPlaceholder
         }
+
+        debugLogResolvedConfig(resolvedConfig)
 
         return resolvedConfig
     }
@@ -181,6 +185,22 @@ enum QRCodeImportPreprocessor {
 
             return output
         }
+    }
+
+    private static func debugLogDecodedOuterJSON(_ jsonData: Data) {
+#if DEBUG
+        if let jsonString = String(data: jsonData, encoding: .utf8) {
+            print("[VPN QR] Decoded outer JSON:\n\(jsonString)")
+        } else {
+            print("[VPN QR] Decoded outer JSON is not valid UTF-8 text")
+        }
+#endif
+    }
+
+    private static func debugLogResolvedConfig(_ config: String) {
+#if DEBUG
+        print("[VPN QR] Resolved WireGuard config:\n\(config)")
+#endif
     }
 }
 
